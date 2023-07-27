@@ -1,12 +1,6 @@
 {
   "pensamentos": [
     {
-      "id": 1,
-      "conteudo": "Que bom que vc veio",
-      "autoria": "Nay",
-      "modelo": "modelo1"
-    },
-    {
       "id": 2,
       "conteudo": "Estudando Angular",
       "autoria": "Dev Alura",
@@ -37,22 +31,10 @@
       "modelo": "modelo2"
     },
     {
-      "conteudo": "Teste",
-      "autoria": "Teste",
-      "modelo": "modelo2",
-      "id": 7
-    },
-    {
       "conteudo": "Mais um pensamento maluco malaco",
       "autoria": "Zé Ninguém",
       "modelo": "modelo1",
       "id": 8
-    },
-    {
-      "conteudo": "Outro teste",
-      "autoria": "Outro teste",
-      "modelo": "modelo2",
-      "id": 9
     }
   ]
 }
