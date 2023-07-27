@@ -1,18 +1,6 @@
 {
   "pensamentos": [
     {
-      "id": 2,
-      "conteudo": "Estudando Angular",
-      "autoria": "Dev Alura",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 3,
-      "conteudo": "Angular é o melhor'",
-      "autoria": "Dev Alura",
-      "modelo": "modelo3"
-    },
-    {
       "id": 4,
       "conteudo": "O universo é infinito?",
       "autoria": "Alisson Jaques",
@@ -29,12 +17,6 @@
       "conteudo": "Na vastidão do universo, somos breves centelhas de consciência, buscando significado e conexão em nossa jornada efêmera pela existência cósmica.",
       "autoria": "ChatGPT",
       "modelo": "modelo2"
-    },
-    {
-      "conteudo": "Mais um pensamento maluco malaco",
-      "autoria": "Zé Ninguém",
-      "modelo": "modelo1",
-      "id": 8
     }
   ]
 }
