@@ -28,7 +28,8 @@ Para obter mais ajuda sobre o uso do Angular CLI `ng help` ou vá conferir a pá
 
 ## Imagens da Aplicação Funcionando
 
-![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/memoteca/home1.png)
-##
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/memoteca/home1.PNG)
 
-![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/memoteca/home2.png)
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/memoteca/home2.PNG)
+
+##
