@@ -1,28 +1,79 @@
 <section class="container criar-pensamentos ff-inter">
   <header class="header">
-    <h2>Adicione um <br> pensamento novo:</h2>
+    <h2>
+      Adicione um <br />
+      pensamento novo:
+    </h2>
   </header>
 
-  <form>
+  <form [formGroup]="formulario">
     <label for="pensamento">Pensamento</label>
     <input
       type="textarea"
       class="input"
       id="pensamento"
-      name="pensamento"
+      formControlName="conteudo"
       placeholder="Digite o pensamento"
-      [(ngModel)]="pensamento.conteudo"
+    />
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario.get('conteudo')?.hasError('required') &&
+        formulario.get('conteudo')?.touched
+      "
     >
+      O campo pensamento é obrigatório!
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario.get('conteudo')?.hasError('pattern') &&
+        formulario.get('conteudo')?.touched
+      "
+    >
+      O campo pensamento não deve ser apenas espaços em branco!
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario.get('conteudo')?.hasError('minlength') &&
+        formulario.get('conteudo')?.touched
+      "
+    >
+      O campo pensamento deve conter no mínimo 3 caracteres!
+    </div>
 
     <label for="autoria">Autoria ou fonte</label>
     <input
       type="texta"
       class="input"
       id="autoria"
-      name="autoria"
+      formControlName="autoria"
       placeholder="Digite a autoria ou fonte"
-      [(ngModel)]="pensamento.autoria"
+    />
+    <div
+      class="mensagem__erro"
+      *ngIf="formulario.get('autoria')?.errors?.['required'] &&
+        formulario.get('autoria')?.touched"
     >
+      O campo autoria é obrigatório!
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="formulario.get('autoria')?.errors?.['pattern'] &&
+        formulario.get('autoria')?.touched"
+    >
+      O campo autoria não deve conter apenas espaços!
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario.get('autoria')?.hasError('minlength') &&
+        formulario.get('autoria')?.touched
+      "
+    >
+      O campo pensamento deve conter no mínimo 3 caracteres!
+    </div>
 
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">
@@ -32,9 +83,8 @@
             type="radio"
             id="modelo1"
             value="modelo1"
-            name="modelo-card"
-            [(ngModel)]="pensamento.modelo"
-          >
+            formControlName="modelo"
+          />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -47,9 +97,8 @@
             type="radio"
             id="modelo2"
             value="modelo2"
-            name="modelo-card"
-            [(ngModel)]="pensamento.modelo"
-          >
+            formControlName="modelo"
+          />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -62,9 +111,8 @@
             type="radio"
             id="modelo3"
             value="modelo3"
-            name="modelo-card"
-            [(ngModel)]="pensamento.modelo"
-          >
+            formControlName="modelo"
+          />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -77,33 +125,50 @@
       <div class="radio-modelo">
         Prévia:
         <div class="modelo modelo1 ff-roboto-mono">
-          <img src="../../../../assets/imagens/modelo1.png" alt="Aspas azuis">
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
-          <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
+          <img src="../../../../assets/imagens/modelo1.png" alt="Aspas azuis" />
+          <p class="conteudo">{{ formulario.get("conteudo")?.value }}</p>
+          <p class="autoria">
+            <b>{{ formulario.get("autoria")?.value }}</b>
+          </p>
         </div>
       </div>
       <div class="radio-modelo">
         Prévia:
         <div class="modelo modelo2 ff-roboto-mono">
-          <img src="../../../../assets/imagens/modelo2.png" alt="Aspas azul claro">
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
-          <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
+          <img
+            src="../../../../assets/imagens/modelo2.png"
+            alt="Aspas azul claro"
+          />
+          <p class="conteudo">{{ formulario.get("conteudo")?.value }}</p>
+          <p class="autoria">
+            <b>{{ formulario.get("autoria")?.value }}</b>
+          </p>
         </div>
       </div>
       <div class="radio-modelo">
         Prévia:
         <div class="modelo modelo3 ff-roboto-mono">
-          <img src="../../../../assets/imagens/modelo3.png" alt="Aspas verdes">
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
-          <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
+          <img
+            src="../../../../assets/imagens/modelo3.png"
+            alt="Aspas verdes"
+          />
+          <p class="conteudo">{{ formulario.get("conteudo")?.value }}</p>
+          <p class="autoria">
+            <b>{{ formulario.get("autoria")?.value }}</b>
+          </p>
         </div>
       </div>
     </div>
 
     <div class="acoes">
-      <button (click)="criarPensamento()" class="botao">Salvar</button>
+      <button
+        [disabled]="!formulario.valid"
+        (click)="criarPensamento()"
+        [ngClass]="habilitarBotao()"
+      >
+        Salvar
+      </button>
       <button (click)="cancelar()" class="botao">Cancelar</button>
     </div>
-
   </form>
 </section>
