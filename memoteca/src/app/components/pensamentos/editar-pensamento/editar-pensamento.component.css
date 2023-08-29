@@ -5,6 +5,14 @@
 
 .botao {
   margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+}
+
+.botao__desabilitado {
+  margin: 5px;
+  margin-top: 70px;
+  width: 200px;
 }
 
 .editar-pensamentos {
@@ -136,10 +144,4 @@ input[type='radio']:checked+.custom-radio span {
   color: red;
   margin-top: -25px;
   margin-bottom: 20px;
-}
-
-.botao__desabilitado {
-  margin: 5px;
-  margin-top: 70px;
-  width: 200px;
 }
