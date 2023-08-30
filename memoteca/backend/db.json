@@ -4,49 +4,57 @@
       "id": 4,
       "conteudo": "O universo é infinito?",
       "autoria": "Alisson Jaques",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "id": 5,
       "conteudo": "A vida é como andar de bicicleta, para manter o equilíbrio é preciso se manter em movimento.",
       "autoria": "Albert Einstein",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": 6,
       "conteudo": "Na vastidão do universo, somos breves centelhas de consciência, buscando significado e conexão em nossa jornada efêmera pela existência cósmica.",
       "autoria": "ChatGPT",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "conteudo": "Que a força esteja contigo",
       "autoria": "Mestre Yoda",
       "modelo": "modelo1",
+      "favorito": false,
       "id": 7
     },
     {
       "id": 8,
       "conteudo": "Que loucura cara.",
       "autoria": "Alisson Jaques",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": true
     },
     {
       "conteudo": "Minerva eat a lot",
       "autoria": "Hermione Gringer",
       "modelo": "modelo3",
+      "favorito": true,
       "id": 9
     },
     {
       "conteudo": "The universe is infinity",
       "autoria": "Unknow",
       "modelo": "modelo3",
+      "favorito": false,
       "id": 10
     },
     {
       "id": 11,
       "conteudo": "Mais um pensamento de teste",
       "autoria": "Sei lá",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     }
   ]
 }

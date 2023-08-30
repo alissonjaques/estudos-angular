@@ -40,6 +40,7 @@ export class EditarPensamentoComponent implements OnInit {
           ]),
         ],
         modelo: [pensamento.modelo],
+        favorito: [pensamento.favorito]
       });
     });
   }
