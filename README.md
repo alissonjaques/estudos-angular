@@ -12,6 +12,6 @@ Uma aplicação front-end que permite o cadastro, edição e deleção de pensam
 
 Uma aplicação front-end que permite o cadastro, edição e deleção de produtos diversos.
 
-![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/angular-essencial/products.PNG)
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/angular-essencial/products.png)
 
 ##
