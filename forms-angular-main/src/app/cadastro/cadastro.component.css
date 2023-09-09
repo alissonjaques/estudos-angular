@@ -17,6 +17,7 @@
   color: var(--azul);
   margin: 3em 0 2em 0;
 }
+
 .campo__etiqueta {
   display: block;
   font-weight: 700;
@@ -73,4 +74,9 @@
   font-size: 12px;
   line-height: 18px;
   color: var(--vermelho);
+}
+
+.ng-touched.ng-invalid:not(form) {
+  border-color: red;
+  color: red
 }
