@@ -8,4 +8,10 @@ Uma aplicação front-end que permite o cadastro, edição e deleção de pensam
 
 ![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/memoteca/home2.PNG)
 
+## Gerência de Produtos
+
+Uma aplicação front-end que permite o cadastro, edição e deleção de produtos diversos.
+
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/angular-essencial/products.PNG)
+
 ##
