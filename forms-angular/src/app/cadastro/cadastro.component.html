@@ -17,23 +17,20 @@
         required
         minlength="2"
         ngModel
+        #nome="ngModel"
       />
-      <div *ngIf="(f.controls['nome']?.invalid && f.controls['nome']?.touched) || f.controls['nome']?.dirty">
-          <span 
-            class="erro__texto"
-            *ngIf="f.controls['nome']?.errors?.['required']"
-          >
-            O campo de nome deve ser preenchido.
-          </span>
-          <span 
-            class="erro__texto" 
-            *ngIf="f.controls['nome']?.errors?.['minlength']"
-          >
-            O nome deve ter no mínimo 2 caracteres.
-          </span>
+      <div *ngIf="(nome?.invalid && nome?.touched) || nome?.dirty">
+        <app-mensagem
+          *ngIf="nome?.errors?.['required']"
+          mensagem="O campo de nome deve ser preenchido."
+        ></app-mensagem>
+        <app-mensagem
+          *ngIf="nome?.errors?.['minlength']"
+          mensagem="O nome deve ter no mínimo 2 caracteres."
+        ></app-mensagem>
       </div>
-      
     </div>
+
     <div class="formulario__dupla">
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="nascimento">Nascimento</label>
@@ -43,16 +40,18 @@
           type="date"
           class="campo__escrita"
           ngModel
+          #nascimento="ngModel"
           required
         />
-        <div *ngIf="(f.controls['nascimento']?.invalid && f.controls['nascimento']?.touched) 
-          || f.controls['nascimento']?.dirty">
-          <span 
-            class="erro__texto" 
-            *ngIf="f.controls['nascimento']?.errors?.['required']"
-          >
-            A data de nascimento deve ser preenchida.
-          </span>
+        <div
+          *ngIf="
+            (nascimento?.invalid && nascimento?.touched) || nascimento?.dirty
+          "
+        >
+          <app-mensagem
+            *ngIf="nascimento?.errors?.['required']"
+            mensagem="A data de nascimento deve ser preenchida."
+          ></app-mensagem>
         </div>
       </div>
       <div class="formulario__campo">
@@ -64,43 +63,43 @@
           placeholder="(XX) XXXXX-XXXX"
           class="campo__escrita"
           ngModel
+          #telefone="ngModel"
           required
         />
-        <div *ngIf="(f.controls['telefone']?.invalid && f.controls['telefone']?.touched) 
-          || f.controls['telefone']?.dirty">
-          <span 
-            class="erro__texto" 
-            *ngIf="f.controls['telefone']?.errors?.['required']"
+        <div
+          *ngIf="(telefone?.invalid && telefone?.touched) || telefone?.dirty"
+        >
+          <app-mensagem
+            *ngIf="telefone?.errors?.['required']"
+            mensagem="O campo contato deve ser preenchido."
           >
-            O campo contato deve ser preenchido.
-          </span>
+          </app-mensagem>
         </div>
       </div>
     </div>
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="email">E-mail</label>
-      <input 
-        name="email" 
+      <input
+        name="email"
         id="email"
-        type="email" 
-        class="campo__escrita" 
-        required 
-        pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$" 
+        type="email"
+        class="campo__escrita"
+        required
+        pattern="^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$"
         ngModel
+        #email="ngModel"
       />
-      <div *ngIf="(f.controls['email']?.invalid && f.controls['email']?.touched) || f.controls['email']?.dirty">
-        <span 
-          class="erro__texto" 
-          *ngIf="f.controls['email']?.errors?.['required']"
+      <div *ngIf="(email?.invalid && email?.touched) || email?.dirty">
+        <app-mensagem
+          *ngIf="email?.errors?.['required']"
+          mensagem="O campo de e-mail deve ser preenchido."
         >
-          O campo de e-mail deve ser preenchido.
-        </span>
-        <span 
-          class="erro__texto"
-          *ngIf="f.controls['email']?.errors?.['pattern']"
+        </app-mensagem>
+        <app-mensagem
+          *ngIf="email?.errors?.['pattern']"
+          mensagem="O e-mail informado é inválido (exemplo valido: nome@dominio.com)"
         >
-          O e-mail informado é inválido (exemplo valido: nome@dominio.com)
-        </span>
+        </app-mensagem>
       </div>
     </div>
 
