@@ -42,6 +42,7 @@
           ngModel
           #nascimento="ngModel"
           required
+          maiorIdadeValidator
         />
         <div
           *ngIf="
@@ -51,6 +52,10 @@
           <app-mensagem
             *ngIf="nascimento?.errors?.['required']"
             mensagem="A data de nascimento deve ser preenchida."
+          ></app-mensagem>
+          <app-mensagem
+            *ngIf="nascimento?.errors?.['maiorIdadeValidator']"
+            mensagem="O usuário deve possuir idade superior ou igual a 18 anos."
           ></app-mensagem>
         </div>
       </div>
