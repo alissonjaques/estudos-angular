@@ -10,6 +10,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
 import { SucessoCadastroComponent } from "./sucesso-cadastro/sucesso-cadastro.component";
 import { MensagemComponent } from "./components/mensagem/mensagem.component";
+import { NumeroEnderecoDirective } from "./directives/numero-endereco.directive";
 import { MaiorIdadeDirective } from "./directives/maior-idade.directive";
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MaiorIdadeDirective } from "./directives/maior-idade.directive";
     CadastroComponent,
     SucessoCadastroComponent,
     MaiorIdadeDirective,
+    NumeroEnderecoDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

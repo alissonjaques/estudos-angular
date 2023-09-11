@@ -138,12 +138,48 @@
 
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="endereco">Endereço</label>
-      <input name="endereco" id="endereco" class="campo__escrita" />
+      <input
+        name="endereco"
+        id="endereco"
+        class="campo__escrita"
+        required
+        minlength="3"
+        ngModel
+        #endereco="ngModel"
+      />
+      <div *ngIf="(endereco?.invalid && endereco?.touched) || endereco?.dirty">
+        <app-mensagem
+          *ngIf="endereco?.errors?.['required']"
+          mensagem="O campo endereço é obrigatório."
+        ></app-mensagem>
+        <app-mensagem
+          *ngIf="endereco?.errors?.['minlength']"
+          mensagem="O campo de endereco deve possuir pelo menos 3 caracteres."
+        ></app-mensagem>
+      </div>
     </div>
     <div class="formulario__dupla">
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="numero">Numero</label>
-        <input name="numero" id="numero" class="campo__escrita" />
+        <input
+          name="numero"
+          id="numero"
+          class="campo__escrita"
+          required
+          numeroEnderecoValidator
+          ngModel
+          #numero="ngModel"
+        />
+        <div *ngIf="(numero?.invalid && numero?.touched) || numero?.dirty">
+          <app-mensagem
+            *ngIf="numero?.errors?.['required']"
+            mensagem="O campo número é obrigatório."
+          ></app-mensagem>
+          <app-mensagem
+            *ngIf="numero?.errors?.['numeroEnderecoValidator']"
+            mensagem="O número informado é inválido."
+          ></app-mensagem>
+        </div>
       </div>
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="complemento">Complemento</label>
@@ -152,12 +188,48 @@
     </div>
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="bairro">Bairro</label>
-      <input name="bairro" id="bairro" class="campo__escrita" />
+      <input
+        name="bairro"
+        id="bairro"
+        class="campo__escrita"
+        required
+        minlength="3"
+        ngModel
+        #bairro="ngModel"
+      />
+      <div *ngIf="(bairro?.invalid && bairro?.touched) || bairro?.dirty">
+        <app-mensagem
+          *ngIf="bairro?.errors?.['required']"
+          mensagem="O campo bairro é obrigatório."
+        ></app-mensagem>
+        <app-mensagem
+          *ngIf="bairro?.errors?.['minlength']"
+          mensagem="O campo de bairro deve possuir pelo menos 3 caracteres."
+        ></app-mensagem>
+      </div>
     </div>
     <div class="formulario__dupla">
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="cidade">Cidade</label>
-        <input name="cidade" id="cidade" class="campo__escrita" />
+        <input
+          name="cidade"
+          id="cidade"
+          class="campo__escrita"
+          required
+          minlength="3"
+          ngModel
+          #cidade="ngModel"
+        />
+        <div *ngIf="(cidade?.invalid && cidade?.touched) || cidade?.dirty">
+          <app-mensagem
+            *ngIf="cidade?.errors?.['required']"
+            mensagem="O campo cidade é obrigatório."
+          ></app-mensagem>
+          <app-mensagem
+            *ngIf="cidade?.errors?.['minlength']"
+            mensagem="O campo de cidade deve possuir pelo menos 3 caracteres."
+          ></app-mensagem>
+        </div>
       </div>
 
       <div class="formulario__campo">

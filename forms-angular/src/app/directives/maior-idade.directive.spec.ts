@@ -1,7 +1,7 @@
-import { MaiorIdadeDirective } from './maior-idade.directive';
+import { MaiorIdadeDirective } from "./numero-endereco.directive";
 
-describe('MaiorIdadeDirective', () => {
-  it('should create an instance', () => {
+describe("MaiorIdadeDirective", () => {
+  it("should create an instance", () => {
     const directive = new MaiorIdadeDirective();
     expect(directive).toBeTruthy();
   });
