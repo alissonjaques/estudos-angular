@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Item } from '../interfaces/item';
-
+import { Item } from '../interfaces/Item';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,9 +26,7 @@ export class ListaDeCompraService {
     },
   ]
 
-  constructor() {
-    console.log('Instanciando dependências necessárias para o serviço.');
-  }
+  constructor() {}
 
   getListaDeCompra(): Item[] {
     return this.listaDeCompra;
@@ -51,4 +48,14 @@ export class ListaDeCompraService {
     this.listaDeCompra.push(item);
   }
 
+  editarItemNaLista(itemAntigo: Item, nomeEditadoDoItem: string){
+    const id = itemAntigo.id;
+    const itemEditado: Item = {
+        id: id,
+        nome: nomeEditadoDoItem,
+        data: itemAntigo.data,
+        comprado: itemAntigo.comprado
+    }
+    this.listaDeCompra.splice(Number(id)-1, 1, itemEditado);
+  }
 }

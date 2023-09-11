@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from './interfaces/item';
 import { ListaDeCompraService } from './service/lista-de-compra.service';
+import { Item } from './interfaces/Item';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,15 @@ import { ListaDeCompraService } from './service/lista-de-compra.service';
 export class AppComponent implements OnInit {
   title = 'app-lista-de-compras';
   listaDeCompra! : Item[];
+  itemParaSerEditado! : Item;
 
   constructor(private listaService: ListaDeCompraService) { }
 
   ngOnInit(): void {
     this.listaDeCompra = this.listaService.getListaDeCompra();
-    console.log(this.listaDeCompra);
+  }
+
+  editarItem(item: Item): void {
+    this.itemParaSerEditado = item;
   }
 }
