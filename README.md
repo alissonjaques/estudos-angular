@@ -20,4 +20,10 @@ Uma aplicação front-end que explora criação de diretivas personalizadas, val
 
 ![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/alura-books/form.png)
 
+## Life Cycle
+
+Projeto que explora os Hooks e ciclo de vida do Angular.
+
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/life-cycle/home.png)
+
 ##
