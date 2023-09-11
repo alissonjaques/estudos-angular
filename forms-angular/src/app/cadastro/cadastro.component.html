@@ -4,8 +4,8 @@
   <form
     class="principal__formulario"
     id="formulario"
-    #f="ngForm"
-    (ngSubmit)="cadastrar(f)"
+    #form="ngForm"
+    (ngSubmit)="cadastrar(form)"
   >
     <h3 class="principal__subtitulo">Dados pessoais</h3>
     <div class="formulario__campo">
@@ -122,7 +122,8 @@
         pattern="^(\d{5})(-?\d{3})$"
         minlength="8"
         maxlength="9"
-        (blur)="consultaCEP($event)"
+        (blur)="consultaCEP($event, form)"
+        validadorCep
       />
       <div *ngIf="(cep?.invalid && cep?.touched) || cep?.dirty">
         <app-mensagem
@@ -132,6 +133,10 @@
         <app-mensagem
           *ngIf="cep?.errors?.['pattern']"
           mensagem="O campo de CEP deve seguir este exemplo: 00000-000"
+        ></app-mensagem>
+        <app-mensagem
+          *ngIf="cep?.errors?.['validadorCep']"
+          mensagem="O CEP informado é inválido."
         ></app-mensagem>
       </div>
     </div>
@@ -234,7 +239,13 @@
 
       <div class="formulario__campo">
         <label class="campo__etiqueta" for="estado">UF</label>
-        <select id="estado" name="estado" class="campo__escrita">
+        <select
+          id="estado"
+          name="estado"
+          class="campo__escrita"
+          ngModel
+          required
+        >
           <option value="AC">Acre</option>
           <option value="AL">Alagoas</option>
           <option value="AP">Amapá</option>
