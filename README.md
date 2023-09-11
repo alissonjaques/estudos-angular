@@ -14,4 +14,10 @@ Uma aplicação front-end que permite o cadastro, edição e deleção de produt
 
 ![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/angular-essencial/products.png)
 
+## Alura Books
+
+Uma aplicação front-end que explora criação de diretivas personalizadas, validações e outros conceitos de formulários orientados a templates.
+
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/alura-books/form.png)
+
 ##
