@@ -1,0 +1,52 @@
+{
+  "listadecompra": [
+    {
+      "id": 1,
+      "nome": "Queijo minas",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": false
+    },
+    {
+      "id": 2,
+      "nome": "Leite desnatado",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": false
+    },
+    {
+      "id": 3,
+      "nome": "Mamão papaia",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": false
+    },
+    {
+      "id": 4,
+      "nome": "Pão francês",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": false
+    },
+    {
+      "id": 5,
+      "nome": "Esponja de louça",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": true
+    },
+    {
+      "id": 6,
+      "nome": "Cacau em pó",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": true
+    },
+    {
+      "id": 7,
+      "nome": "Aveia em flocos",
+      "data": "Segunda-feira (31/10/2022) às 08:30",
+      "comprado": true
+    },
+    {
+      "id": 10,
+      "nome": "Farinha de trigo",
+      "data": "17/11/2022 11:42:57",
+      "comprado": false
+    }
+  ]
+}

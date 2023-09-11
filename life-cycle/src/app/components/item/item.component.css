@@ -1,0 +1,52 @@
+:host {
+  display: grid;
+  grid-template-columns: .5fr 2.5fr .5fr .5fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "checkbox description delete-icon edit-icon"
+    "date date date date";
+  padding: .5rem 0;
+}
+
+small {
+  font-size: .5rem;
+}
+
+.checkbox {
+  /* justify-self: start; */
+  grid-area: checkbox;
+}
+
+.description {
+  justify-self: start;
+  align-self: center;
+  grid-area: description;
+}
+
+.d-contents {
+  display: contents;
+}
+
+.delete-icon {
+  justify-self: center;
+  align-self: center;
+  grid-area: delete-icon;
+}
+
+.edit-icon {
+  justify-self: center;
+  align-self: center;
+  grid-area: edit-icon;
+}
+
+.date {
+  justify-self: start;
+  grid-area: date;
+  margin-top: .5rem;
+  margin-left: .5rem;
+}
+.line-through {
+  text-decoration: line-through;
+}
