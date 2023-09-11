@@ -1,4 +1,9 @@
-<form class="add-item">
-  <input type="text" name="item" placeholder="Digite o item que deseja adicionar">
+<form class="add-item" (ngSubmit)="adicionarItem()">
+  <input
+    type="text"
+    name="item"
+    placeholder="Digite o item que deseja adicionar"
+    [(ngModel)]="valorItem"
+  >
   <button type="submit">Salvar item</button>
 </form>
