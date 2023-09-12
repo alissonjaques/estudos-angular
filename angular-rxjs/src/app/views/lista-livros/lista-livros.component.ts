@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LivroService } from 'src/app/services/livro.service';
 
 @Component({
   selector: 'app-lista-livros',
@@ -8,9 +9,15 @@ import { Component } from '@angular/core';
 export class ListaLivrosComponent {
 
   listaLivros: [];
+  campoBusca: string = '';
 
-  constructor() { }
+  constructor(private livroService: LivroService) { }
 
+  buscarLivros() {
+    this.livroService.buscar(this.campoBusca).subscribe(
+        (retornoAPI) => console.log(retornoAPI), (error) => console.log(error)
+    )
+  }
 }
 
 
