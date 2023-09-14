@@ -15,7 +15,7 @@ export class LivroVolumeInfo{
     this.publisher = item.volumeInfo?.publisher,
     this.publishedDate = item.volumeInfo?.publishedDate,
     this.description = item.volumeInfo?.description,
-    this.previewLink = item?.previewLink,
+    this.previewLink = item?.volumeInfo?.previewLink,
     this.thumbnail = item.volumeInfo?.imageLinks?.thumbnail
   }
 }
