@@ -12,14 +12,7 @@ export class LivroService {
   constructor(private http: HttpClient) { }
 
    buscar(valorDigitado: string): Observable<LivrosResultado> {
-        const params = new HttpParams().append('q', valorDigitado)
-
-        return this.http.get<LivrosResultado>(this.API, { params })
-         /*
-        .pipe(
-            // tap(retornoAPI => console.log('Fluxo do tap', retornoAPI)), // retorna LivrosResultado
-            map(resultado => resultado.items ?? []), // realiza o filtro, selecionando apenas o campo items de livros resultados
-            // tap(resultado => console.log('Fluxo após o map', resultado)) // retorna Item[]
-          )*/
+      const params = new HttpParams().append('q', valorDigitado);
+      return this.http.get<LivrosResultado>(this.API, { params });
     }
 }

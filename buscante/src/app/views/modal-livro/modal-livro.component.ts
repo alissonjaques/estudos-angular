@@ -29,7 +29,6 @@ export class ModalLivroComponent {
   }
 
   lerPrevia() {
-    console.log(this.livro.previewLink)
     window.open(this.livro.previewLink, '_blank');
   }
 
