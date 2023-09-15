@@ -1,36 +1,34 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { LivroService } from 'src/app/services/livro.service';
-import { Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
 import { Item, Livro } from 'src/app/models/interfaces';
 import { LivroVolumeInfo } from 'src/app/models/LivroVolumeInfo';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-livros',
   templateUrl: './lista-livros.component.html',
   styleUrls: ['./lista-livros.component.css']
 })
-export class ListaLivrosComponent implements OnDestroy {
+export class ListaLivrosComponent {
 
-  listaLivros: Livro[];
-  campoBusca: string = '';
-  subscription: Subscription;
+  campoBusca = new FormControl();
+
+  livrosEncontrados$ = this.campoBusca.valueChanges
+    .pipe(
+      debounceTime(300),
+      filter((valorDigitado) => valorDigitado.length >= 3),
+      distinctUntilChanged(),
+      switchMap((valorDigitado) => this.livroService.buscar(valorDigitado)),
+      map(items => this.livrosResultadoParaLivros(items))
+    );
 
   constructor(private livroService: LivroService) { }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe()
-  }
-
-  buscarLivros() {
-    this.subscription = this.livroService.buscar(this.campoBusca).subscribe({
-      next: (items) => {
-        this.listaLivros = this.livrosResultadoParaLivros(items)},
-      error: (error) => console.log(error)
-    })
-  }
-
   livrosResultadoParaLivros(items: Item[]): LivroVolumeInfo[] {
     return items.map((item) => {
+
+      console.log(item)
       return new LivroVolumeInfo(item);
     });
   }

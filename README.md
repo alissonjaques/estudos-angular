@@ -26,4 +26,11 @@ Projeto que explora os Hooks e ciclo de vida do Angular.
 
 ![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/life-cycle/home.png)
 
+## Buscante
+
+Projeto que explora diversos operadores do RxJS, além disso demonstra a criação de pipes customizados, utilização de observables 
+com pipes asincronos, melhoria de performance com subscrição de métodos, tratamento de erros e entre outros.
+
+![alt text](https://github.com/alissonjaques/imagens-aplicacoes/blob/main/buscante/home.png)
+
 ##
