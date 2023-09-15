@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LivroService } from 'src/app/services/livro.service';
-import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs';
-import { Item, Livro } from 'src/app/models/interfaces';
+import { EMPTY, catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, throwError } from 'rxjs';
+import { Item } from 'src/app/models/interfaces';
 import { LivroVolumeInfo } from 'src/app/models/LivroVolumeInfo';
 import { FormControl } from '@angular/forms';
 
@@ -13,6 +13,7 @@ import { FormControl } from '@angular/forms';
 export class ListaLivrosComponent {
 
   campoBusca = new FormControl();
+  mensagemErro: string = '';
 
   livrosEncontrados$ = this.campoBusca.valueChanges
     .pipe(
@@ -20,7 +21,13 @@ export class ListaLivrosComponent {
       filter((valorDigitado) => valorDigitado.length >= 3),
       distinctUntilChanged(),
       switchMap((valorDigitado) => this.livroService.buscar(valorDigitado)),
-      map(items => this.livrosResultadoParaLivros(items))
+      map(items => this.livrosResultadoParaLivros(items)),
+      catchError(() => {
+        this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!'
+        return EMPTY;
+        // console.log(erro)
+        // return throwError(() => new Error(this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!'))
+      })
     );
 
   constructor(private livroService: LivroService) { }
