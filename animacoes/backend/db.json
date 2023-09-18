@@ -4,20 +4,20 @@
       "id": 2,
       "descricao": "Estudar sobre acessibilidade",
       "categoria": "Trabalho",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "prioridade": "Normal"
     },
     {
       "id": 5,
       "descricao": "Trocar lâmpada",
       "categoria": "Casa",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "prioridade": "Alta"
     },
     {
       "id": 6,
       "descricao": "Ler",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Estudos",
       "prioridade": "Alta"
     },
