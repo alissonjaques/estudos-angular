@@ -24,7 +24,7 @@
     {
       "id": 7,
       "descricao": "Ir ao supermercado",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Casa",
       "prioridade": "Normal"
     }
