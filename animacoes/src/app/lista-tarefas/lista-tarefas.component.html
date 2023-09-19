@@ -1,29 +1,28 @@
 <section class="criar-tarefa">
   <div class="botao-criar">
-    <button (click)="mostrarOuEsconderFormulario()">
-      Criar nova tarefa
-    </button>
+    <button (click)="mostrarOuEsconderFormulario()">Criar nova tarefa</button>
   </div>
   <form
     @shownState
+    [@shakeAnimation]="formulario.value"
     class="formulario ff-prompt"
     [formGroup]="formulario"
     *ngIf="formAberto"
     [@formButton]="formulario.valid ? 'valid' : 'invalid'"
   >
     <label for="descricao">Descrição da tarefa</label>
-    <input required
+    <input
+      required
       type="text"
       formControlName="descricao"
       placeholder="Digite a tarefa"
       [ngClass]="campoValidado('descricao')"
-    >
-    <app-mensagem
-      *ngIf="!validado"
-      mensagemValidacao="Preencha a descrição">
+    />
+    <app-mensagem *ngIf="!validado" mensagemValidacao="Preencha a descrição">
     </app-mensagem>
     <label for="prioridade">Prioridade</label>
-    <select required
+    <select
+      required
       formControlName="prioridade"
       [ngClass]="campoValidado('prioridade')"
     >
@@ -32,12 +31,11 @@
       <option value="Normal">Normal</option>
       <option value="Baixa">Baixa</option>
     </select>
-    <app-mensagem
-      *ngIf="!validado"
-      mensagemValidacao="Escolha a prioridade">
+    <app-mensagem *ngIf="!validado" mensagemValidacao="Escolha a prioridade">
     </app-mensagem>
     <label for="categoria">Categoria</label>
-    <select required
+    <select
+      required
       formControlName="categoria"
       [ngClass]="campoValidado('categoria')"
     >
@@ -46,9 +44,7 @@
       <option value="Trabalho">Trabalho</option>
       <option value="Estudos">Estudos</option>
     </select>
-    <app-mensagem
-      *ngIf="!validado"
-      mensagemValidacao="Escolha a categoria">
+    <app-mensagem *ngIf="!validado" mensagemValidacao="Escolha a categoria">
     </app-mensagem>
     <div class="botoes-form">
       <button
@@ -58,12 +54,10 @@
         [ngClass]="habilitarBotao()"
         [disabled]="!formulario.valid"
       >
-          Salvar
+        Salvar
       </button>
-      <button
-        (click)="cancelar()"
-        class="botao-form botao-cancelar">
-          Cancelar
+      <button (click)="cancelar()" class="botao-form botao-cancelar">
+        Cancelar
       </button>
     </div>
   </form>
@@ -74,18 +68,19 @@
     <img
       src="assets/imagens/ilustracao-Tarefas.png"
       alt="Ilustração de um ambiente com mesa, computador, quadro e um vaso com planta"
-    >
+    />
   </div>
   <div class="busca">
     <p class="ff-prompt">Procurando o que fazer?</p>
     <input
-     id="campo-busca" type="search"
-     placeholder="Busque por uma tarefa"
-     [(ngModel)]="campoBusca"
-     (keyup)="filtrarTarefasPorDescricao(campoBusca)"
-    >
+      id="campo-busca"
+      type="search"
+      placeholder="Busque por uma tarefa"
+      [(ngModel)]="campoBusca"
+      (keyup)="filtrarTarefasPorDescricao(campoBusca)"
+    />
   </div>
-  <div *ngIf="tarefasFiltradas.length > 0, else semTarefas">
+  <div *ngIf="tarefasFiltradas.length > 0; else semTarefas">
     <div
       @filterAnimation
       class="lista-tarefas card-{{ tarefa.categoria }}"
@@ -97,36 +92,38 @@
         <p class="categoria-tarefa categoria-{{ tarefa.categoria }}">
           <img
             src="assets/icones/{{ tarefa.categoria }}.png"
-            alt="Ícone de {{ tarefa.categoria }}">
-              {{ tarefa.categoria }}
+            alt="Ícone de {{ tarefa.categoria }}"
+          />
+          {{ tarefa.categoria }}
         </p>
         <p class="prioridade-tarefa prioridade-{{ tarefa.prioridade }}">
           {{ tarefa.prioridade }}
         </p>
         <p class="status-tarefa">
           <button
-            [ngClass]="(tarefa.statusFinalizado == true) ? 'icone-checked' : 'icone-unchecked'"
-            (click)="finalizarTarefa(tarefa.id);"
-            [@checkButton]="(tarefa.id === id ? 'checked' : 'unchecked')">
-          </button>
+            [ngClass]="
+              tarefa.statusFinalizado == true
+                ? 'icone-checked'
+                : 'icone-unchecked'
+            "
+            (click)="finalizarTarefa(tarefa.id)"
+            [@checkButton]="tarefa.id === id ? 'checked' : 'unchecked'"
+          ></button>
         </p>
       </div>
       <div class="conteudo">
         <p
           class="card-descricao ff-prompt
-          card-{{ tarefa.statusFinalizado ? 'Feito' : '' }}">
-            {{ tarefa.descricao }}
+          card-{{ tarefa.statusFinalizado ? 'Feito' : '' }}"
+        >
+          {{ tarefa.descricao }}
         </p>
         <div class="botoes-card">
-          <button
-            class="botao-editar"
-            (click)="carregarParaEditar(tarefa.id)">
-            <img src="assets/icones/icone-editar.png" alt="Ícone de editar">
+          <button class="botao-editar" (click)="carregarParaEditar(tarefa.id)">
+            <img src="assets/icones/icone-editar.png" alt="Ícone de editar" />
           </button>
-          <button
-            (click)="excluirTarefa(tarefa.id)"
-            class="botao-deletar">
-            <img src="assets/icones/icone-excluir.png" alt="Ícone de excluir">
+          <button (click)="excluirTarefa(tarefa.id)" class="botao-deletar">
+            <img src="assets/icones/icone-excluir.png" alt="Ícone de excluir" />
           </button>
         </div>
       </div>
@@ -134,6 +131,7 @@
   </div>
 </section>
 <ng-template #semTarefas>
-  <p @flyInOut class="ng-template ff-prompt">Olá! Ainda não há tarefas por aqui! :)</p>
+  <p @flyInOut class="ng-template ff-prompt">
+    Olá! Ainda não há tarefas por aqui! :)
+  </p>
 </ng-template>
-

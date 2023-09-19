@@ -10,7 +10,8 @@ import {
   flyInOutTrigger,
   formButtonTrigger,
   highlightedStateTrigger,
-  shownStateTrigger
+  shakeTrigger,
+  shownStateTrigger,
 } from '../animations';
 
 @Component({
@@ -23,8 +24,9 @@ import {
     checkButtonTrigger,
     filterTrigger,
     formButtonTrigger,
-    flyInOutTrigger
-  ]
+    flyInOutTrigger,
+    shakeTrigger,
+  ],
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
@@ -58,12 +60,12 @@ export class ListaTarefasComponent implements OnInit {
     return this.tarefasFiltradas;
   }
 
-  filtrarTarefasPorDescricao(descricao: string){
+  filtrarTarefasPorDescricao(descricao: string) {
     this.campoBusca = descricao;
-    if(descricao){
-      this.tarefasFiltradas = this.listaTarefas.filter(tarefa =>
+    if (descricao) {
+      this.tarefasFiltradas = this.listaTarefas.filter((tarefa) =>
         tarefa.descricao.toLowerCase().includes(this.campoBusca.toLowerCase())
-      )
+      );
     } else {
       this.tarefasFiltradas = this.listaTarefas;
     }
