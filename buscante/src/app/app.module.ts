@@ -12,6 +12,7 @@ import { ModalLivroComponent } from './views/modal-livro/modal-livro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoriaPipe } from './componentes/pipes/autoria.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { AutoriaPipe } from './componentes/pipes/autoria.pipe';
     LivroComponent,
     ListaLivrosComponent,
     ModalLivroComponent,
-    AutoriaPipe
+    AutoriaPipe,
   ],
   imports: [
     BrowserModule,
@@ -29,9 +30,10 @@ import { AutoriaPipe } from './componentes/pipes/autoria.pipe';
     RouterModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
