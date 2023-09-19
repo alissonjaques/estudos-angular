@@ -9,6 +9,7 @@
     class="formulario ff-prompt"
     [formGroup]="formulario"
     *ngIf="formAberto"
+    [@formButton]="formulario.valid ? 'valid' : 'invalid'"
   >
     <label for="descricao">Descrição da tarefa</label>
     <input required
@@ -51,10 +52,12 @@
     </app-mensagem>
     <div class="botoes-form">
       <button
+        id="botao-salvar"
         (click)="salvarTarefa()"
         class="botao-form"
         [ngClass]="habilitarBotao()"
-        [disabled]="!formulario.valid">
+        [disabled]="!formulario.valid"
+      >
           Salvar
       </button>
       <button
@@ -131,6 +134,6 @@
   </div>
 </section>
 <ng-template #semTarefas>
-  <p class="ng-template ff-prompt">Olá! Ainda não há tarefas por aqui! :)</p>
+  <p @flyInOut class="ng-template ff-prompt">Olá! Ainda não há tarefas por aqui! :)</p>
 </ng-template>
 

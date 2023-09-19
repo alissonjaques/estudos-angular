@@ -11,13 +11,13 @@
       "id": 5,
       "descricao": "Trocar lâmpada",
       "categoria": "Casa",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "prioridade": "Alta"
     },
     {
       "id": 6,
       "descricao": "Ler",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "categoria": "Estudos",
       "prioridade": "Alta"
     },
@@ -27,6 +27,13 @@
       "statusFinalizado": true,
       "categoria": "Casa",
       "prioridade": "Normal"
+    },
+    {
+      "id": 8,
+      "descricao": "Aprendar a usar variáveis observables",
+      "statusFinalizado": false,
+      "categoria": "Trabalho",
+      "prioridade": "Alta"
     }
   ]
 }
