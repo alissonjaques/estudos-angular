@@ -9,6 +9,7 @@ import {
   flyInOutTrigger,
   formButtonTrigger,
   highlightedStateTrigger,
+  listStateTrigger,
   shakeTrigger,
   shownStateTrigger,
 } from '../animations';
@@ -26,6 +27,7 @@ import { Subscription } from 'rxjs';
     formButtonTrigger,
     flyInOutTrigger,
     shakeTrigger,
+    listStateTrigger,
   ],
 })
 export class ListaTarefasComponent implements OnInit {
@@ -38,6 +40,7 @@ export class ListaTarefasComponent implements OnInit {
   campoBusca: string = '';
   tarefasFiltradas: Tarefa[] = [];
   tarefasSubscription: Subscription = new Subscription();
+  estadoBotao: string = 'unchecked';
 
   formulario: FormGroup = this.fomBuilder.group({
     id: [0],
@@ -136,6 +139,12 @@ export class ListaTarefasComponent implements OnInit {
   finalizarTarefa(tarefa: Tarefa) {
     this.id = tarefa.id;
     this.service.atualizarStatusTarefa(tarefa);
+
+    if (tarefa.statusFinalizado == true) {
+      this.estadoBotao = 'checked';
+    } else {
+      this.estadoBotao = 'unchecked';
+    }
   }
 
   habilitarBotao(): string {
